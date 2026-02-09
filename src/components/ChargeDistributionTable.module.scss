@@ -1,0 +1,129 @@
+.section {
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  grid-column: 1 / -1;
+}
+
+.title {
+  margin: 0 0 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+
+  th,
+  td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  td {
+    color: var(--color-text);
+  }
+
+  .totalRow {
+    background: rgba(0, 112, 210, 0.08);
+    font-weight: 600;
+
+    td {
+      padding: 0.6rem 0.75rem;
+    }
+  }
+}
+
+.distCell {
+  min-width: 200px;
+}
+
+.stackedBar {
+  display: flex;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.segment {
+  min-width: 2px;
+  transition: width 0.2s ease;
+}
+
+.pctLabels {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.avgSection {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+
+  h3 {
+    margin: 0 0 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+}
+
+.avgGrid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.avgItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.avgLabel {
+  color: var(--color-muted);
+}
+
+.avgValue {
+  font-weight: 600;
+  color: var(--color-accent);
+}

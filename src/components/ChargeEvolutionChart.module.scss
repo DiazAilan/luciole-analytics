@@ -1,0 +1,67 @@
+.section {
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.swatch {
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.chartWrap {
+  width: 100%;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.svg {
+  width: 100%;
+  min-width: 400px;
+}
+
+.gridLine {
+  stroke: var(--color-border);
+  stroke-width: 0.5;
+  stroke-dasharray: 3 3;
+}
+
+.axisLabel {
+  font-size: 11px;
+  fill: var(--color-muted);
+}
+
+.line {
+  vector-effect: non-scaling-stroke;
+}
+
+.axisLabelX {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-align: center;
+}
