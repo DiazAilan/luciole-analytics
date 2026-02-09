@@ -37,3 +37,9 @@ npm run build
 1. Click **Importer un fichier CSV**
 2. Select your `Évaluation Charge DS-RTE - Main.csv` file
 3. View the generated analytics reports
+
+## GitHub Pages
+
+The app deploys to GitHub Pages on every push to `main`. Enable it in **Settings → Pages** by selecting **GitHub Actions** as the source. The site will be available at:
+
+**https://diazailan.github.io/luciole-analytics/**
