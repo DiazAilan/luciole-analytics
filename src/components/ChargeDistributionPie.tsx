@@ -1,10 +1,17 @@
 import type { AnalyticsData } from '../types';
 import styles from './ChargeDistributionPie.module.scss';
 
-const CATEGORY_COLORS: string[] = ['#4a90d9', '#e06c6c', '#e6c04a', '#8b949e'];
+const CATEGORY_COLOR_MAP: Record<string, string> = {
+  Composant: '#4a90d9',
+  'Devops / Architecture': '#e06c6c',
+  'Site Storybook': '#e6c04a',
+  Maintenance: '#2ecc71',
+};
 
-function getCategoryColor(index: number): string {
-  return CATEGORY_COLORS[index % CATEGORY_COLORS.length];
+const FALLBACK_COLORS: string[] = ['#4a90d9', '#e06c6c', '#e6c04a', '#8b949e'];
+
+function getCategoryColor(name: string, index: number): string {
+  return CATEGORY_COLOR_MAP[name] ?? FALLBACK_COLORS[index % FALLBACK_COLORS.length];
 }
 
 export function ChargeDistributionPie({ data }: { data: AnalyticsData }) {
@@ -15,7 +22,7 @@ export function ChargeDistributionPie({ data }: { data: AnalyticsData }) {
     name: stat.category,
     count: stat.count,
     percent: (stat.count / total) * 100,
-    color: getCategoryColor(i),
+    color: getCategoryColor(stat.category, i),
   }));
 
   const conicParts = segments

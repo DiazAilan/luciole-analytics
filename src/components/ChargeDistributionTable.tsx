@@ -1,14 +1,21 @@
 import type { AnalyticsData } from '../types';
 import styles from './ChargeDistributionTable.module.scss';
 
-const CATEGORY_COLORS = ['#4a90d9', '#e06c6c', '#e6c04a'];
+const MAIN_CATEGORIES_ORDER = [
+  'Composant',
+  'Devops / Architecture',
+  'Site Storybook',
+  'Maintenance',
+];
+
+const CATEGORY_COLORS = ['#4a90d9', '#e06c6c', '#e6c04a', '#2ecc71'];
 
 type RowData = { sprint: number } & Record<string, number>;
 
 export function ChargeDistributionTable({ data }: { data: AnalyticsData }) {
-  const mainCategories = data.categoryStats
-    .slice(0, 3)
-    .map((c) => c.category);
+  const mainCategories = MAIN_CATEGORIES_ORDER.filter((cat) =>
+    data.categoryStats.some((c) => c.category === cat)
+  );
 
   const sprintRows: RowData[] = data.sprintStats.map((s) => ({
     sprint: s.sprint,

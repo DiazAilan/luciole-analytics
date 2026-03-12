@@ -1,12 +1,19 @@
 import type { AnalyticsData } from '../types';
 import styles from './ChargeEvolutionChart.module.scss';
 
-const CATEGORY_COLORS = ['#4a90d9', '#e06c6c', '#e6c04a'];
+const MAIN_CATEGORIES_ORDER = [
+  'Composant',
+  'Devops / Architecture',
+  'Site Storybook',
+  'Maintenance',
+];
+
+const CATEGORY_COLORS = ['#4a90d9', '#e06c6c', '#e6c04a', '#2ecc71'];
 
 export function ChargeEvolutionChart({ data }: { data: AnalyticsData }) {
-  const mainCategories = data.categoryStats
-    .slice(0, 3)
-    .map((c) => c.category);
+  const mainCategories = MAIN_CATEGORIES_ORDER.filter((cat) =>
+    data.categoryStats.some((c) => c.category === cat)
+  );
 
   const sprintStats = data.sprintStats;
   if (sprintStats.length === 0) return null;
@@ -40,7 +47,7 @@ export function ChargeEvolutionChart({ data }: { data: AnalyticsData }) {
   return (
     <section className={styles.section}>
       <h2 className={styles.title}>
-        Composant, Devops / Architecture et Site Storybook
+        Composant, Devops / Architecture, Site Storybook et Maintenance
       </h2>
       <div className={styles.legend}>
         {mainCategories.map((cat, i) => (
